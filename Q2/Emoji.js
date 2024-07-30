@@ -3,16 +3,16 @@ exports.emojiConvert = (req) => {
     let result = ""
     let temp = ""
     for (v of req){
-        while (temp) {
+        if (temp){
+
             if (v !== ":"){
                 temp += v
-                break
             }else {
                 temp += v
                 result += store[temp] ? store[temp] : "-"     
-                break           
             }
         }
+        
         if (v !== ":" & !temp){
             result += v
         }
